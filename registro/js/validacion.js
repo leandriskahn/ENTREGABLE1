@@ -16,8 +16,16 @@ function samePasswords(passGen1, passGen2) {
   return passGen1 == passGen2;
 }
 
-function noEmptyField(a, b, c, d) {
-  return !(a.length == 0 || b.length == 0 || c.length == 0 || d.length == 0);
+function noEmptyField(a) {
+  
+  let r = true
+  for (n in a) {
+    if (n.value == "") {
+      r = false
+    }
+  };
+
+  return (r)
 }
 
 //
@@ -41,10 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(passwordMinimumLength(pass1));
     console.log(passwordMinimumLength(pass2));
     console.log(samePasswords(pass1, pass2));
-    console.log(noEmptyField(nombre, apellido, pass1, pass2));
+    console.log(noEmptyField([nombre, apellido, pass1, pass2]));
     console.log(pass1);
     console.log(pass2);
     console.log(pass1.length);
     console.log(pass2.length);
   });
 });
+
+
+
+
+
