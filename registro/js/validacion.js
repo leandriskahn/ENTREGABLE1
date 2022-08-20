@@ -18,14 +18,13 @@ function samePasswords(passGen1, passGen2) {
 
 function noEmptyField(a) {
   
-  let r = true
   for (n in a) {
     if (n.value == "") {
-      r = false
+      return (false)
     }
   };
 
-  return (r)
+  
 }
 
 //
